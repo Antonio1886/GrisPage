@@ -1,0 +1,1 @@
+Creacion del proyecto inicial y configuracion basica 
