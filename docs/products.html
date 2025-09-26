@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanelitaStore - Productos</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/csss/styles.css">
+</head>
+<body>
+
+<main class="container py-4">
+  <div class="row">
+    <!-- Filtros -->
+    <div class="col-md-3">
+      <h5>Filtros</h5>
+      
+      <!-- Mujer -->
+      <div class="mb-3">
+        <h6>Mujer</h6>
+        <div class="form-check">
+          <input class="form-check-input subcat-filter" type="checkbox" value="pantalones" id="sub-mujer-pantalones">
+          <label class="form-check-label" for="sub-mujer-pantalones">Pantalones</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input subcat-filter" type="checkbox" value="playeras" id="sub-mujer-playeras" checked>
+          <label class="form-check-label" for="sub-mujer-playeras">Playeras</label>
+        </div>
+      </div>
+
+      <!-- Accesorios -->
+      <div class="form-check">
+        <input class="form-check-input category-filter" type="checkbox" value="accesorios" id="cat-accesorios" checked>
+        <label class="form-check-label" for="cat-accesorios">Accesorios</label>
+      </div>
+    </div>
+
+    <!-- Productos -->
+    <div class="col-md-9">
+      <div id="products-grid" class="row g-4"></div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal de producto -->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 id="pm-title" class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body">
+        <img id="pm-img" src="" class="img-fluid mb-3" alt="">
+        <p id="pm-desc" class="text-muted"></p>
+        <p class="fw-bold" id="pm-price"></p>
+
+        <!-- Selección de talla -->
+        <div class="mb-3">
+          <label for="pm-size" class="form-label">Talla</label>
+          <select id="pm-size" class="form-select">
+            <option value="S">S</option>
+            <option value="M" selected>M</option>
+            <option value="L">L</option>
+          </select>
+        </div>
+
+        <!-- Selección de cantidad -->
+        <div class="mb-3">
+          <label for="pm-qty" class="form-label">Cantidad</label>
+          <input id="pm-qty" type="number" min="1" value="1" class="form-control">
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button id="pm-add" class="btn btn-primary">Agregar al carrito</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+<script>
+  // Renderizar productos iniciales
+  renderProducts();
+
+  // Escuchar cambios en filtros
+  document.querySelectorAll('.category-filter, .subcat-filter')
+    .forEach(el => el.addEventListener('change', () => renderProducts()));
+</script>
+
+</body>
+</html>

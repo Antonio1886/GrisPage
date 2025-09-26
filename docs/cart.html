@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito | CanelitaStore</title>
+  <link rel="stylesheet" href="/csss/styles.css" />
+  <script src="../js/cart.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">CanelitaStore</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="products.html">Productos</a></li>
+      <li><a href="cart.html" class="active">Carrito</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+  </header>
+
+  <main class="container py-5">
+    <h2 class="mb-4">Tu Carrito</h2>
+    
+    <!-- Lista de productos -->
+    <div id="cart-items" class="cart-items row g-4">
+      <!-- Cada producto se genera dinámicamente con JS -->
+    </div>
+
+    <!-- Resumen del carrito -->
+    <div class="cart-summary mt-4 p-3 bg-light rounded shadow-sm d-flex justify-content-between align-items-center flex-wrap">
+      <p id="total-price" class="mb-2 mb-md-0 fs-5 fw-bold">Total: $0</p>
+      <button id="checkout-btn" class="btn btn-accent">Finalizar Compra</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center">
+    <p>© <span id="year"></span> CanelitaStore | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

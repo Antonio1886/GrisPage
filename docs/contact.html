@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | CanelitaStore</title>
+  <link rel="stylesheet" href="/csss/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">CanelitaStore</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="products.html">Productos</a></li>
+      <li><a href="cart.html">Carrito</a></li>
+      <li><a href="contact.html" class="active">Contacto</a></li>
+    </ul>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow-1 d-flex justify-content-center align-items-center py-5">
+    <div class="contact-card">
+      <h2>Contáctanos</h2>
+      <p class="intro-text">¿Tienes alguna duda o comentario? Escríbenos y te responderemos lo antes posible.</p>
+
+      <form class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name"><i class="bi bi-person-fill"></i> Nombre</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          <small class="error-msg">Por favor ingresa tu nombre</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email"><i class="bi bi-envelope-fill"></i> Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
+          <small class="error-msg">Por favor ingresa un correo válido</small>
+        </div>
+
+        <div class="form-group">
+          <label for="message"><i class="bi bi-chat-left-text-fill"></i> Mensaje</label>
+          <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <small class="error-msg">El mensaje no puede estar vacío</small>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© <span id="year"></span> CanelitaStore | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Validación simple
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('input, textarea').forEach(field => {
+        if (!field.value.trim()) {
+          field.classList.add('invalid');
+          valid = false;
+        } else {
+          field.classList.remove('invalid');
+        }
+      });
+      if (valid) {
+        alert('Mensaje enviado correctamente');
+        form.reset();
+      }
+    });
+
+    // Validación visual al escribir
+    form.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('input', () => {
+        if (field.value.trim()) {
+          field.classList.remove('invalid');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
