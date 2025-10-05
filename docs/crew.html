@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" href="/assets/Icon.png" type="image/png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crew | Be Fake</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/csss/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Be Fake</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="crew.html" class="active">Crew</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+      <li><a href="cart.html">Carrito <span id="cart-count">(0)</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Crew -->
+  <section class="crew-hero text-center">
+    <h1>Nuestro Crew</h1>
+    <p>Clientes, amigos y familia que llevan Be Fake en su estilo.</p>
+  </section>
+
+  <!-- Grid de fotos y comentarios -->
+  <section class="crew-grid container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="crew-card">
+          <img src="/assets/look1.png" alt="Crew 1">
+          <p>"Me siento libre al usar estas prendas, auténtico 100%."</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="crew-card">
+          <img src="/assets/Look2.png" alt="Crew 2">
+          <p>"Be Fake me dio confianza para marcar mi estilo."</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="crew-card">
+          <img src="/assets/look3.png" alt="Crew 3">
+          <p>"No son solo prendas, es la vibra de la marca."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center">
+    <p>&copy; <span id="year"></span> Be Fake. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

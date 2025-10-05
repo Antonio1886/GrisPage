@@ -3,99 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CanelitaStore</title>
+  <title>Be Fake</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/Icon.png" type="image/png">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="/csss/styles.css">
-  <!-- Fuente Merriweather -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">CanelitaStore</div>
+    <div class="logo">Be Fake</div>
     <ul>
       <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="hombre.html">Hombre</a></li>
-      <li><a href="mujer.html">Mujer</a></li>
-      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="crew.html">Crew</a></li>
       <li><a href="contact.html">Contacto</a></li>
       <li><a href="cart.html">Carrito <span id="cart-count">(0)</span></a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Bienvenido a CanelitaStore</h1>
-      <p>Moda exclusiva y con estilo único</p>
-      <a href="products.html" class="btn btn-accent">Ver Productos</a>
+    <div class="hero-content text-center">
+      <h1 class="brand-title">Be Fake</h1>
+<img src="/assets/HomePage.jpeg" alt="Look 1" style="width:300px; height:auto;">
+      <p class="subtitle">Tu estilo, tus reglas — Be Fake, Be Free</p>
     </div>
   </section>
 
-  <!-- Categorías Destacadas -->
-  <section class="categories container py-5">
+  <!-- Galería 3 rectángulos -->
+  <section class="gallery container my-5">
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="category-card">
-          <img src="/img/cat-hombre.jpg" alt="Hombre" class="img-fluid">
-          <h3>Hombre</h3>
-          <a href="hombre.html" class="btn btn-accent">Ver Más</a>
+        <div class="gallery-card">
+          <!-- FOTO 1 -->
+          <img src="/assets/look1.png" alt="Look 1">
+          <a href="catalogo.html" class="overlay">Ver Catálogo</a>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="category-card">
-          <img src="/img/cat-mujer.jpg" alt="Mujer" class="img-fluid">
-          <h3>Mujer</h3>
-          <a href="mujer.html" class="btn btn-accent">Ver Más</a>
+        <div class="gallery-card">
+          <!-- FOTO 2 -->
+          <img src="/assets/Look2.png" alt="Look 2">
+          <a href="catalogo.html" class="overlay">Ver Catálogo</a>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="category-card">
-          <img src="/img/cat-accesorios.jpg" alt="Accesorios" class="img-fluid">
-          <h3>Accesorios</h3>
-          <a href="accesorios.html" class="btn btn-accent">Ver Más</a>
+        <div class="gallery-card">
+          <!-- FOTO 3 -->
+          <img src="/assets/look3.png" alt="Look 3">
+          <a href="catalogo.html" class="overlay">Ver Catálogo</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Productos Destacados -->
-  <section class="featured-products container py-5">
-    <h2>Productos Destacados</h2>
-    <div class="row g-4" id="featured-grid">
-      <!-- Aquí se pueden insertar productos dinámicamente desde app.js -->
-    </div>
+  <!-- Botón especial -->
+  <section class="text-center my-5">
+    <a href="cart.html" class="btn-drop">Armar mi drop</a>
+  </section>
+
+  <!-- Crew teaser -->
+  <section class="crew-teaser text-center py-5">
+    <h2>Únete al Crew</h2>
+    <p>Mira cómo la comunidad vive el estilo Be Fake.</p>
+    <a href="crew.html" class="btn btn-outline-light">Ver Crew</a>
   </section>
 
   <!-- Footer -->
-  <footer class="py-4">
-    <div class="container text-center">
-      <p>&copy; <span id="year"></span> CanelitaStore. Todos los derechos reservados.</p>
-      <div class="social-icons">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-      </div>
+  <footer class="py-4 text-center">
+    <p>&copy; <span id="year"></span> Be Fake. Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-tiktok"></i></a>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/app.js"></script>
   <script>
-    // Año automático en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Actualizar contador del carrito
-    if (typeof updateCartCount === "function") {
-      updateCartCount();
-    }
   </script>
-
 </body>
 </html>
